@@ -1,0 +1,6 @@
+CREATE TABLE dusty.documents (
+  id BIGINT UNSIGNED NOT NULL PRIMARY KEY AUTO_INCREMENT,
+  url VARCHAR(255),
+  title VARCHAR(100),
+  content TEXT
+) ENGINE = InnoDB;
