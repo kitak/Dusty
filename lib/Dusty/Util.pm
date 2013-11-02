@@ -24,11 +24,6 @@ sub ngram {
     return @words;
 }
 
-sub byte_lc {
-    use bytes;
-    return lc shift;
-}
-
 sub intersect {
     my ($p1, $p2) = @_;
     my $answer = [];
@@ -46,6 +41,7 @@ sub intersect {
         }
     }
 
+    return $answer;
 }
 
 1;
