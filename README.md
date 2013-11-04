@@ -1,14 +1,38 @@
 # NAME
 
-Dusty - It's new $module
+DustySearch - Pocketのエントリの全文検索
 
-# SYNOPSIS
+# 必要なミドルウェア
 
-    use Dusty;
+   - MySQL
+   - Redis
 
-# DESCRIPTION
+# インストール
+   ```sh
+   git clone https://github.com/kitak/DustySearch.git
+   cd DustySearch
+   carton install
+   cpanm .
 
-Dusty is ...
+   # MySQLでデータベースを作成し
+   mysql -u root データベース名 < db/schema.sql
+   ```
+
+# コマンド
+## エントリの取得
+    ```sh
+    carton exec perl bin/get_html.pl N # N日前までのエントリを取得する。デフォルトは1日前まで。
+    ```
+
+## インデックスの作成
+    ```sh
+    carton exec perl bin/indexing.pl
+    ```
+
+## 検索
+    ```sh
+    carton exec perl bin/search.pl QUERY
+    ```
 
 # LICENSE
 

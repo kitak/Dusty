@@ -21,7 +21,7 @@ sub add_document {
     my ($self, $doc) = @_;
 
     my @words = ngram(
-        lc(join("\n", $doc->title, $doc->url, $doc->content))
+        lc(join("\n", $doc->title, $doc->url, $doc->content)), 3
     );
 
     my %seen;
@@ -50,7 +50,7 @@ sub retrieve {
 
     my @postings = ();
     for my $qt (split /\s+/, $q) {
-        for my $w (ngram(lc($qt))) {
+        for my $w (ngram(lc($qt), 3)) {
             if (my $p = $self->get_postings($w)) {
                 push @postings, $p;
             } else {
