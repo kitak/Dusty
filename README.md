@@ -14,8 +14,10 @@ cd DustySearch
 carton install
 cpanm .
 
-# MySQLでデータベースを作成し
-mysql -u root データベース名 < db/schema.sql
+# MySQLでデータベースdustyを作成し
+mysql -u root dusty < db/schema.sql
+
+# プロジェクト直下にPocketAPIのトークンの書かれたconfig.ymlを設置する
 ```
 
 ## コマンド
